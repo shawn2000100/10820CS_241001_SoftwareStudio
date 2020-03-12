@@ -1,0 +1,70 @@
+html {
+    height: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+}
+body {
+    height: 100%;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background: #fff url("../images/bg.jpg") no-repeat fixed center bottom;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header, .footer {
+    color: white;
+    text-align: center;
+    text-shadow: 1.5px 1.px;
+}
+
+.header h1 {
+    font-family: Griffy;
+    font-weight: bold;
+}
+
+.container {
+    margin: auto;
+    background-color: white;
+    border: 20px solid white;
+    max-width: 550px;
+    opacity: 0.6;
+    border-collapse: collapse;
+}
+
+.post {
+    margin-bottom: 5rem;
+    background-color: whitesmoke;
+    border: 10px solid whitesmoke;
+}
+
+.post:last-child {
+    margin-bottom: 0;
+}
+
+.post h2 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.date {
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-weight: bold;
+    margin: auto;
+    padding: 1rem;
+    border-collapse: separate;
+    border-spacing: 1rem;
+}
+
+.quote {
+    border-left: 0.5rem solid #ccc;
+    margin: 1em 0.5rem;
+    padding: 0.5rem;
+}
+
+.footer {
+    
+}
