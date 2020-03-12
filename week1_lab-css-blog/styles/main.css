@@ -17,7 +17,9 @@ body {
 .header, .footer {
     color: white;
     text-align: center;
-    text-shadow: 1.5px 1.px;
+    text-shadow: 2.0px, 1.0px;
+    margin: auto;
+    max-width: 50%;
 }
 
 .header h1 {
@@ -29,15 +31,16 @@ body {
     margin: auto;
     background-color: white;
     border: 20px solid white;
-    max-width: 550px;
-    opacity: 0.6;
+    max-width: 55%;
+    background-color: rgba(255, 255, 255, 0.55);
     border-collapse: collapse;
 }
 
 .post {
-    margin-bottom: 5rem;
+    margin-bottom: 0;
     background-color: whitesmoke;
     border: 10px solid whitesmoke;
+    opacity: 0.67;
 }
 
 .post:last-child {
@@ -66,5 +69,7 @@ body {
 }
 
 .footer {
-    
+    font-style: italic;
+    font-family: 'Lato', sans-serif;
+    padding: 1rem;
 }
