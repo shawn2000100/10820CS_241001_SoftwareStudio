@@ -1,0 +1,111 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+	line-height: 1.5;
+}
+
+body {
+    background-color: #232323;
+    margin: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	transition: background 0.6s;
+    -webkit-transition: background 0.6s;
+    -moz-transition: background 0.6s;
+}
+
+#stripe {
+	background: white;
+	padding: 1rem;
+	color: #484848;
+}
+
+#navbar {
+	display: -webkit-flex;
+    display: flex;
+	flex-direction: row;
+}
+
+#brand {
+	font-weight: bold;
+	padding: 0 1rem;
+}
+
+#about {
+	margin-left: auto;
+	color: #bbb;
+}
+
+.container {
+    margin-left: auto;
+	margin-right: auto;
+    max-width: 520px;
+}
+
+#card-container::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#color-picked {
+    font-weight: bold;
+	font-size: 120%;
+}
+
+@media (min-width: 576px) {
+	#color-picked {
+	    font-size: 200%;
+	}
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+    color: white;
+    text-transform: uppercase;
+	margin: 0;
+    padding: 20px 0;
+}
+
+.card {
+    width: 30%;
+    background: white;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+	border-radius: 1rem;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+	cursor: pointer;
+}
+
+.selected {
+    color: white;
+    background: steelblue;
+}
+
+button {
+	display: block;
+	margin: 3rem auto;
+	padding: 1rem;
+	outline: none;
+	border: none;
+    border-radius: 999rem;
+    background-color: white;
+	font-size: 1rem;
+    font-weight: 700;
+    color: #484848;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+	cursor: pointer;
+}
+
+button:hover {
+    color: white;
+    background-color: steelblue;
+}
