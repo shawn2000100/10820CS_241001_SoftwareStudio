@@ -1,0 +1,26 @@
+.navbar {
+    background: white;
+    padding: 1rem;
+    color: #484848;
+}
+
+.navbar .flex {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar .brand {
+    font-weight: bold;
+    padding: 0 1rem;
+}
+
+.navbar .about {
+    margin-left: auto;
+    color: #bbb;
+}
+
+.navbar .selected {
+    color: white;
+    background: steelblue;
+}

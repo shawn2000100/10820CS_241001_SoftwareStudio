@@ -1,0 +1,19 @@
+.banner {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    background: ;
+    padding: 1rem;
+    color: #484848;
+}
+
+.banner .flex {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.navbar .selected {
+    color: white;
+    background: steelblue;
+}
