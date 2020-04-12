@@ -57,4 +57,68 @@ export default class Deck extends Component {
         const random = Math.floor(Math.random() * this.cards.length);
         return this.cards[random].getColor();
     }
+
+    timeoutFadeInCards(){
+        for (let card of this.cards){
+            card.fadeIn("#FFF");
+        }
+        this.gameOver = true;
+    }
+
+    chmod(mode){
+        if(mode === 'Hard'){
+            this.root.innerHTML=`
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            `;
+            
+            this.cards = [];
+            const els = this.root.querySelectorAll(Card.getRootClass());
+            for (let el of els) {
+                const card = new Card(el);
+                card.on('click', this.handleCardClick.bind(this));
+                this.cards.push(card);
+            }
+        }
+        else if(mode === 'Easy'){
+            this.root.innerHTML=`
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            `;
+            
+            this.cards = [];
+            const els = this.root.querySelectorAll(Card.getRootClass());
+            for (let el of els) {
+                const card = new Card(el);
+                card.on('click', this.handleCardClick.bind(this));
+                this.cards.push(card);
+            }
+        }
+        else if(mode === 'Nightmare'){
+            this.root.innerHTML=`
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            `;
+            
+            this.cards = [];
+            const els = this.root.querySelectorAll(Card.getRootClass());
+            for (let el of els) {
+                const card = new Card(el);
+                card.on('click', this.handleCardClick.bind(this));
+                this.cards.push(card);
+            }
+        }
+    }
 }

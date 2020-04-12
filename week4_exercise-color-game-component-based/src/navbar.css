@@ -10,7 +10,7 @@
     flex-direction: row;
 }
 
-.navbar .brand {
+.navbar .brand, .mode {
     font-weight: bold;
     padding: 0 1rem;
 }
@@ -18,9 +18,4 @@
 .navbar .about {
     margin-left: auto;
     color: #bbb;
-}
-
-.navbar .selected {
-    color: white;
-    background: steelblue;
 }

@@ -1,0 +1,14 @@
+.mode {
+    cursor: pointer;
+    display: inline;
+}
+
+.mode:hover{
+    color: blue;
+}
+
+.mode.selected {
+    border-radius: 1.5rem;
+    color: white;
+    background: steelblue;
+}

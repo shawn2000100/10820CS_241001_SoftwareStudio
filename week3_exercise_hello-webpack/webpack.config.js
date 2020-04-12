@@ -4,8 +4,8 @@ var webpack = require('webpack');
 module.exports = {
     context: path.resolve(__dirname, './src'),
     entry:{
-      main: ['./main.js'],
-      module: ['./module-1.js']
+      main: ['./main.js']
+    //   module: ['./module-1.js']
     },
     output:{
       path: path.resolve(__dirname, 'dist'),

@@ -21,10 +21,16 @@ export default class Reset extends Component {
 
     reset() {
         this.resetDisplay.textContent = "New Color";
+        this.root.style.display = "block";
     }
 
     showPlayAgain() {
+        this.root.style.display = "block";
         this.resetDisplay.textContent = "Play Again";
+    }
+
+    hidePlayAgain(){
+        this.root.style.display = "none";
     }
 
     handleDomClick(e) {
