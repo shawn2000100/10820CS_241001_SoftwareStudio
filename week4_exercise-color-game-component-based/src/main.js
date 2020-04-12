@@ -22,7 +22,8 @@ export default class Main extends Component {
         this.deck.on('rightClick', this.handleDeckRightClick.bind(this));
 
         this.board = new Board(root.querySelector('.board'), this.deck.getPickedColor());
-        this.board.on('timeout', this.handleBoardTimeout.bind(this))
+        this.board.on('timeout', this.handleBoardTimeout.bind(this));
+        this.board.on('blink', this.handleBoardBlink.bind(this));
 
         this.reset = new Reset(root.querySelector('.reset'));
         this.reset.on('click', this.handleRestClick.bind(this));
@@ -34,9 +35,10 @@ export default class Main extends Component {
 
     handleDeckRightClick(firer, pickedColor) {
         this.root.style.backgroundColor = pickedColor;
+        
+        this.board.clearTimer();
         this.board.showCorrectMessage();
         this.reset.showPlayAgain();
-        this.board.clearTimer();
     }
 
     handleBoardTimeout(firer){
@@ -44,8 +46,13 @@ export default class Main extends Component {
         
         this.board.clearTimer();
         this.board.showTimeoutMessage();
-        this.deck.timeoutFadeInCards();
+        this.deck.gameOverFadeInCards();
         this.reset.showPlayAgain();
+    }
+
+    handleBoardBlink(firer){
+        this.root.style.background = "white";
+        setTimeout(() => {this.root.style.background = "#232323"}, 70);
     }
 
     handleRestClick(firer) {
@@ -63,20 +70,8 @@ export default class Main extends Component {
 
     handleChmod(firer, mode){
         this.board.clearTimer();
-
-        if(mode === 'Hard'){
-            this.deck.chmod(mode);
-            this.handleRestClick();
-        }
-        else if(mode === 'Easy'){
-            this.deck.chmod(mode);
-            this.handleRestClick();
-        }
-        else if(mode === 'Nightmare'){
-            this.deck.chmod(mode);
-            this.handleRestClick();
-            this.reset.hidePlayAgain();
-        }
+        this.deck.chmod(mode);
+        this.handleRestClick();
     }
 }
 

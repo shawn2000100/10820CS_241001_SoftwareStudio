@@ -17,6 +17,7 @@ export default class Deck extends Component {
         super(root);
 
         this.gameOver = false;
+        this.cardNumber = 3;
         this.cards = [];
         const els = root.querySelectorAll(Card.getRootClass());
         for (let el of els) {
@@ -43,9 +44,7 @@ export default class Deck extends Component {
             return;
 
         if (color === this.pickedColor) {
-            for (let card of this.cards)
-                card.fadeIn("#FFF");
-            this.gameOver = true;
+            this.gameOverFadeInCards();
             this.fire('rightClick', this.pickedColor);
         } else {
             firer.fadeOut();
@@ -58,7 +57,7 @@ export default class Deck extends Component {
         return this.cards[random].getColor();
     }
 
-    timeoutFadeInCards(){
+    gameOverFadeInCards(){
         for (let card of this.cards){
             card.fadeIn("#FFF");
         }
@@ -66,59 +65,24 @@ export default class Deck extends Component {
     }
 
     chmod(mode){
-        if(mode === 'Hard'){
-            this.root.innerHTML=`
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            `;
-            
-            this.cards = [];
-            const els = this.root.querySelectorAll(Card.getRootClass());
-            for (let el of els) {
-                const card = new Card(el);
-                card.on('click', this.handleCardClick.bind(this));
-                this.cards.push(card);
-            }
+        if(mode === 'Easy'){
+            this.cardNumber = 3;
         }
-        else if(mode === 'Easy'){
-            this.root.innerHTML=`
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            `;
-            
-            this.cards = [];
-            const els = this.root.querySelectorAll(Card.getRootClass());
-            for (let el of els) {
-                const card = new Card(el);
-                card.on('click', this.handleCardClick.bind(this));
-                this.cards.push(card);
-            }
+        else if(mode === 'Hard'){
+            this.cardNumber = 6;
         }
         else if(mode === 'Nightmare'){
-            this.root.innerHTML=`
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            `;
-            
-            this.cards = [];
-            const els = this.root.querySelectorAll(Card.getRootClass());
-            for (let el of els) {
-                const card = new Card(el);
-                card.on('click', this.handleCardClick.bind(this));
-                this.cards.push(card);
-            }
+            this.cardNumber = 9;
+        }
+
+        let t = '<div class="card"></div>';
+        this.root.innerHTML = t.repeat(this.cardNumber);
+        this.cards = [];
+        const els = this.root.querySelectorAll(Card.getRootClass());
+        for (let el of els) {
+            const card = new Card(el);
+            card.on('click', this.handleCardClick.bind(this));
+            this.cards.push(card);
         }
     }
 }
