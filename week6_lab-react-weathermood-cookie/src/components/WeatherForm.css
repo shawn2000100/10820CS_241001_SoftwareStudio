@@ -1,0 +1,12 @@
+.weather-form {
+    text-align: center;
+}
+
+.weather-form input {
+    margin-top: 0.25rem;
+    width: 12rem;
+}
+
+.weather-form button {
+    margin-top: 0.25rem;
+}
