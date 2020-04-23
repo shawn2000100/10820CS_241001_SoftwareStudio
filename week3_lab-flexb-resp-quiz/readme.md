@@ -30,9 +30,11 @@
   <img src="./readmeImgs/prob2_2.png" width="50%">
 
 ## Submission
+Open a new merge request when you finished your quiz. <br />
+If you commit before the deadline but open the merge request after the deadline, you'll get 0 point.<br />
 
-
+<b>Note</b>: When you open merge request, `Title` should be : std{your ID} Submission
 
 ##`IMPORTANT`<br />
-After you finish the exercise, demonstrate it to the TAs<br />
-
+From now on, we will not help you to deal with any git problems during the quiz.<br />
+If there's nothing in your branch, you will get 0 points.
