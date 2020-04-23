@@ -3,10 +3,11 @@
 }
 
 .weather-form input {
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
     width: 12rem;
 }
 
 .weather-form button {
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
 }
+.bdred { border: 1px solid red;}

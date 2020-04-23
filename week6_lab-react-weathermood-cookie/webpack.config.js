@@ -75,5 +75,5 @@ module.exports = {
         compress: true,
         port: 7070
     },
-    devtool: 'cheap-source-map'
+    devtool: 'source-map'
 };

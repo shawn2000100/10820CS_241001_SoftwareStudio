@@ -47,3 +47,8 @@
 .weather-bg.na {
     background-image: url('images/w-na-bg.jpg');
 }
+.font-white {
+    color: #fff;
+    position: relative;
+    bottom: 2rem;
+}

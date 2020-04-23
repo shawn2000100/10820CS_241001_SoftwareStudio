@@ -1,19 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom'
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink
-} from 'reactstrap';
 
 import WeatherDisplay from 'components/WeatherDisplay.jsx';
 import WeatherForm from 'components/WeatherForm.jsx';
@@ -26,7 +12,7 @@ export default class Today extends React.Component {
         masking: PropTypes.bool,
         group: PropTypes.string,
         description: PropTypes.string,
-        temp: PropTypes.number,
+        temp: PropTypes.array,
         unit: PropTypes.string
     };
 
@@ -50,6 +36,7 @@ export default class Today extends React.Component {
         };
 
         this.handleFormQuery = this.handleFormQuery.bind(this);
+        this.maskInterval = null;
     }
 
     componentDidMount() {
@@ -57,10 +44,21 @@ export default class Today extends React.Component {
     }
 
     componentWillUnmount() {
+        console.log("cmp will unmount");
         if (this.state.loading) {
             cancelWeather();
+            console.log("after cancelWeather");
         }
     }
+
+    // // JC: it seems key to cookies
+    // componentWillReceiveProps(nextProps) {
+    //     console.log(nextProps);
+    //     this.setState({
+    //         unit: nextProps.unit,
+    //         city: nextProps.city
+    //     } 
+    // }
 
     render() {
         return (
@@ -78,7 +76,9 @@ export default class Today extends React.Component {
             loading: true,
             masking: true,
             city: city // set city state immediately to prevent input text (in WeatherForm) from blinking;
-        }, () => { // called back after setState completes
+        }, 
+        // called back after setState completes
+        () => { 
             getWeather(city, unit).then(weather => {
                 this.setState({
                     ...weather,
@@ -94,7 +94,8 @@ export default class Today extends React.Component {
             });
         });
 
-        setTimeout(() => {
+        this.maskInterval = setInterval(() => {
+            clearInterval(this.maskInterval);
             this.setState({
                 masking: false
             });
@@ -103,6 +104,8 @@ export default class Today extends React.Component {
 
     handleFormQuery(city, unit) {
         this.getWeather(city, unit);
+        // jc try
+        this.props.onQuery(city, unit);
     }
 
     notifyUnitChange(unit) {

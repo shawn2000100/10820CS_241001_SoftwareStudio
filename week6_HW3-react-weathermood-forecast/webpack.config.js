@@ -10,7 +10,8 @@ module.exports = {
         alias: {
             components: path.resolve(srcPath, 'components'),
             api: path.resolve(srcPath, 'api'),
-            images: path.resolve(srcPath, 'images')
+            images: path.resolve(srcPath, 'images'),
+            css: path.resolve(srcPath, 'css')
         }
     },
     entry: {

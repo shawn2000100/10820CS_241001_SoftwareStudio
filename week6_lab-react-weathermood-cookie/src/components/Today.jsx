@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import WeatherDisplay from 'components/WeatherDisplay.jsx';
 import WeatherForm from 'components/WeatherForm.jsx';
-import {getWeather} from 'api/open-weather-map.js';
+import {cancelWeather, getWeather} from 'api/open-weather-map.js';
 
 import './weather.css';
 
@@ -34,10 +34,12 @@ export default class Today extends React.Component {
             loading: true,
             masking: true
         };
-
         this.handleFormQuery = this.handleFormQuery.bind(this);
+        // jc add
+        // this.maskInterval = null;
     }
 
+    // JC: ....??
     componentDidMount() {
         this.getWeather('Hsinchu', 'metric');
     }
@@ -87,7 +89,7 @@ export default class Today extends React.Component {
                 this.setState({
                     ...Today.getInitWeatherState(unit),
                     loading: false
-                });
+                }, () => this.notifyUnitChange(unit));
             });
         });
 
@@ -96,10 +98,23 @@ export default class Today extends React.Component {
                 masking: false
             });
         }, 600);
+        // // JC add
+        // this.maskInterval = setInterval(() => {
+        //     clearInterval(this.maskInterval);
+        //     this.setState({
+        //         masking: false
+        //     });
+        // }, 600);
     }
 
     handleFormQuery(city, unit) {
         this.props.onQuery(city, unit);
         this.getWeather(city, unit);
+    }
+
+    notifyUnitChange(unit) {
+        if (this.props.units !== unit) {
+            this.props.onUnitChange(unit);
+        }
     }
 }

@@ -1,0 +1,25 @@
+.today {
+    padding: 1rem;
+}
+
+.today .weather {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.today .posts {
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+.today .posts .loading {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    text-align: center;
+    z-index: 999;
+}

@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 // TODO replace the key with yours
-const key = '<Your own API key>';
+// const key = 'b3afe9493ec0ff8c6abd278665046f76'; // JC's
+const key = '36978c6550efee0e27e50850cc57adda'; // Steal someones
 const baseUrl = `http://api.openweathermap.org/data/2.5/weather?appid=${key}`;
+const baseForecastUrl = `http://api.openweathermap.org/data/2.5/forecast?appid=${key}`;
 
 export function getWeatherGroup(code) {
     let group = 'na';
@@ -44,7 +46,7 @@ export function getWeather(city, unit) {
                 code: res.data.weather[0].id,
                 group: getWeatherGroup(res.data.weather[0].id),
                 description: res.data.weather[0].description,
-                temp: res.data.main.temp,
+                temp: [res.data.main.temp],
                 unit: unit // or 'imperial'
             };
         }
@@ -63,8 +65,45 @@ export function cancelWeather() {
 
 export function getForecast(city, unit) {
     // TODO
+    var url = `${baseForecastUrl}&q=${encodeURIComponent(city)}&units=${unit}`;
+
+    console.log(`Making request to: ${url}`);
+
+    return axios.get(url, { cancelToken: weatherSource.token }).then(function (res) {
+        if (res.data.cod && res.data.messages) {
+            throw new Error(res.data.messages);
+        } else {
+            return {
+                city: capitalize(city),
+                code: [
+                    res.data.list[1].weather[0].id,
+                    res.data.list[2].weather[0].id,
+                    res.data.list[3].weather[0].id,
+                    res.data.list[4].weather[0].id,
+                    res.data.list[5].weather[0].id
+                ],
+                group: getWeatherGroup(res.data.list[0].weather[0].id),
+                description: res.data.list[0].weather[0].description,
+                temp: [
+                    res.data.list[1].main.temp,
+                    res.data.list[2].main.temp,
+                    res.data.list[3].main.temp,
+                    res.data.list[4].main.temp,
+                    res.data.list[5].main.temp
+                ],
+                unit: unit // or 'imperial'
+            };
+        }
+    }).catch(function (err) {
+        if (axios.isCancel(err)) {
+            console.error(err.message, err);
+        } else {
+            throw err;
+        }
+    });
 }
 
 export function cancelForecast() {
     // TODO
+    weatherSource.cancel('Request canceled');
 }

@@ -17,6 +17,7 @@ import {
     DropdownItem,
     UncontrolledDropdown
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 
@@ -38,36 +39,28 @@ class Main extends React.Component {
             unit: 'metric',
             city: 'na',
             navbarToggle: false,
-            favoriteCities: cookies.get('cities')? cookies.get('cities').split(';') : []
+            favoriteCities: cookies.get('cities') ? cookies.get('cities').split(';') : []
         };
 
         this.handleNavbarToggle = this.handleNavbarToggle.bind(this);
         this.handleFormQuery = this.handleFormQuery.bind(this);
         this.setFavoriteCities = this.setFavoriteCities.bind(this);
         this.clearFavoriteCities = this.clearFavoriteCities.bind(this);
+        // add
+        this.handleUnitChange = this.handleUnitChange.bind(this);
     }
 
     // JC add
     componentWillReceiveProps(nextProps) {
         console.log("JC add. comp Will Receive");
         console.log(nextProps)
-        // this.setState({
-        //     unit: nextProps.unit
-        // }, ()=>{});
-        console.log("test render");
-        var cookies = this.props.cookies
-        var cities = cookies.get('cities').split(";");
-        console.log(cities);
+        console.log(this.props);
     }
 
     render() {
-        // var cookies = this.props.cookies
-        // var cities = cookies.get('cities').split(";");
-        // const options = [];
-        // for (let i of cities) { options.push(i); }
-
         return (
             <Router>
+                {/* group意義不明 */}
                 <div className={`main bg-faded ${this.state.group}`}>
                     <div className='container'>
                         <Navbar color="faded" light expand="md">
@@ -87,7 +80,10 @@ class Main extends React.Component {
                                         </DropdownToggle>
                                         <DropdownMenu right>
                                             {this.state.favoriteCities.map(m => 
-                                                <DropdownItem key={m} onClick={() => this.setState({'city': m})}>
+                                                <DropdownItem 
+                                                    key={m} 
+                                                    onClick={() => this.setState({'city': m})}
+                                                >
                                                     {m}
                                                 </DropdownItem>)}
                                             <DropdownItem divider />
@@ -103,10 +99,20 @@ class Main extends React.Component {
                     </div>
 
                     <Route exact path="/" render={() => (
-                        <Today city={this.state.city} unit={this.state.unit} onQuery={this.handleFormQuery} />
+                        <Today 
+                            city={this.state.city} 
+                            unit={this.state.unit} 
+                            onQuery={this.handleFormQuery} 
+                            onUnitChange={this.handleUnitChange}
+                        />
                     )}/>
                     <Route exact path="/forecast" render={() => (
-                        <Forecast unit={this.state.unit} onUnitChange={this.handleUnitChange} />
+                        <Forecast 
+                            city={this.state.city} 
+                            unit={this.state.unit} 
+                            onQuery={this.handleFormQuery} 
+                            onUnitChange={this.handleUnitChange} 
+                        />
                     )}/>
                 </div>
             </Router>
@@ -114,41 +120,32 @@ class Main extends React.Component {
     }
 
     setFavoriteCities(city) {
-        // 先參考
+        // JC add
         var cookies = this.props.cookies; 
-        // debugger;
-        console.log("test setFav....")
-        console.log(cookies);
-        console.log(city);
 
         if (!cookies.get('cities')) {
-            cookies.set('cities', city, {
-            path: '/'
-            });
+            cookies.set('cities', city, {path: '/'});
             this.setState({
-            favoriteCities: [city]
+                favoriteCities: [city]
             });
         } else {
             var cities = cookies.get('cities').split(";");
 
             if (!cities.includes(city)) {
-            cities.push(city);
-            cookies.set('cities', cities.join(';'));
-            this.setState({
-                favoriteCities: cities
-            });
+                cities.push(city);
+                cookies.set('cities', cities.join(';'));
+                this.setState({
+                    favoriteCities: cities
+                });
             }
         }
     }
 
     handleNavbarToggle() {
-        // this.setState((prevState, props) => ({
-        //     navbarToggle: !prevState.navbarToggle
-        // }));
-        this.setState({
-            city: city,
-            unit: unit
-        }, () => {this.setFavoriteCities(this.state.city);});
+        console.log("navbar Toggle");
+        this.setState((prevState, props) => ({
+            navbarToggle: !prevState.navbarToggle
+        }));
     }
 
     handleFormQuery(city, unit) {
@@ -158,8 +155,15 @@ class Main extends React.Component {
         }, ()=>{this.setFavoriteCities(city);});
     }
 
+    // add
+    handleUnitChange(unit) {
+        this.setState({
+            unit: unit
+        });
+    }
+
     clearFavoriteCities() {
-        // 參考
+        // JC add
         var cookies = this.props.cookies;
         cookies.remove('cities');
         this.setState({
