@@ -1,0 +1,54 @@
+.todo-item {
+    width: 100%;
+}
+
+.todo-item .todo {
+    width: 100%;
+}
+
+.todo-item .mood {
+    text-align: center;
+    font-size: 2rem;
+    width: 3rem;
+}
+
+.todo-item .wrap {
+    width: 100%;
+    padding-left: 0.75rem;
+    overflow: hidden;
+}
+
+.todo-item .ts {
+    color: #bcbcbc;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.todo-item .text {
+    white-space: pre-wrap;
+}
+
+.todo-item .mood {
+    text-align: center;
+    font-size: 2rem;
+    width: 3rem;
+}
+
+.todo-item .done-ts {
+    color: #bcbcbc;
+    font-size: 0.875rem;
+}
+
+.todo-item .check .checkbox {
+    font-size: 1.25rem;
+    color: #bcdff1;
+    padding-left: 0.5rem;
+}
+
+.todo-item.undone .check .checkbox:hover {
+    cursor: pointer;
+}
+
+.todo-item.done .text {
+    text-decoration: line-through;
+}

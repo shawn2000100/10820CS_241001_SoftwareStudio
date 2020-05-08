@@ -1,0 +1,46 @@
+.forecast {
+    padding: 1rem;
+}
+
+.forecast .tomorrow {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.forecast .rests {
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+.forecast .accomplished-only {
+    cursor: pointer;
+}
+
+.forecast .todos {
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+.forecast .todos .label {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.3), 0 0 1rem rgba(0, 0, 0, 0.7);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.forecast .todos .label h4 {
+    font-weight: 300;
+}
+
+.forecast .todos .loading {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    text-align: center;
+    z-index: 999;
+}
