@@ -1,0 +1,9 @@
+node_modules/*
+.tern-project
+dist/index.bundle.js*
+dist/vendor.bundle.js*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
