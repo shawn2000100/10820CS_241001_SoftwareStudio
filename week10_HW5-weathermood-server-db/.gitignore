@@ -1,0 +1,9 @@
+server/node_modules/*
+server/npm-debug.log
+server/data-*.json
+server/logs.txt
+*.csv
+sever/*.dump
+client/node_modules/*
+client/dist/index.bundle.js*
+client/dist/vendor.bundle/js*
