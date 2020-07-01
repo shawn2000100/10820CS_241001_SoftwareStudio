@@ -17,7 +17,7 @@ router.get('/todos', function(req, res, next){
         unaccomplishedOnly = true;
     else
         unaccomplishedOnly = false;
-    todoModel.listTodos(unaccomplishedOnly,searchText,start).then(todos => {
+    todoModel.listTodos(searchText, start, unaccomplishedOnly).then(todos => {
         res.json(todos);
     }).catch(next);
 });

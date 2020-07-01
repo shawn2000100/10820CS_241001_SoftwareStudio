@@ -3,7 +3,7 @@ if (!global.db) {
     db = pgp(process.env.DB_URL);
 }
 
-function listTodos(unaccomplishedOnly = false,searchText = '', start) {
+function listTodos(searchText = '', start, unaccomplishedOnly = false) {
     const where = [];
     if (searchText)
         where.push(`text ILIKE '%$1:value%'`);
@@ -19,7 +19,7 @@ function listTodos(unaccomplishedOnly = false,searchText = '', start) {
         ORDER BY id DESC
         LIMIT 10
     `;
-    return db.any(sql, [searchText, start, unaccomplishedOnly]);
+    return db.any(sql, [searchText, start]);
 }
 
 function createTodo(mood, text) {

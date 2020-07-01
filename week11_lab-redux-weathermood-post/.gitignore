@@ -1,0 +1,4 @@
+node_modules/*
+.tern-project
+dist/*.bundle.js
+dist/*.bundle.js.map

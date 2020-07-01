@@ -1,0 +1,15 @@
+.forecast {
+    padding: 1rem;
+}
+
+.forecast .tomorrow {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.forecast .rests {
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto;
+}

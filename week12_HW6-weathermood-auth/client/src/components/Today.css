@@ -1,0 +1,32 @@
+.today {
+    padding: 1rem;
+}
+
+.today .weather {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.today .posts {
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+.today .posts .label {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.3), 0 0 1rem rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.today .posts .loading {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    text-align: center;
+    z-index: 999;
+}

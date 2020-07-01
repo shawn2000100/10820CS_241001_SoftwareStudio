@@ -4,9 +4,9 @@ import moment from 'moment';
 import '@babel/polyfill';
 
 // Develop server URL
-// const todoBaseUrl = 'http://localhost:3000/api';
+const todoBaseUrl = 'http://localhost:3000/api';
 // Production server URL
-const todoBaseUrl = 'http://weathermood-db-5.us-east-1.elasticbeanstalk.com/api';
+// const todoBaseUrl = 'http://weathermood-db-5.us-east-1.elasticbeanstalk.com/api';
 // 似乎是預設(模擬)Server時才會用到...
 // const todoKey = 'todos';
 
@@ -14,13 +14,13 @@ const todoBaseUrl = 'http://weathermood-db-5.us-east-1.elasticbeanstalk.com/api'
 export function listTodos(unaccomplishedOnly = false, searchText = '', start) {
     let url = `${todoBaseUrl}/todos`;
     let query = [];
+    if (unaccomplishedOnly)
+        query.push(`unaccomplishedOnly=${unaccomplishedOnly}`)
     if (searchText)
         query.push(`searchText=${searchText}`);
     // pagination...
     if (start)
         query.push(`start=${start}`);
-    if(unaccomplishedOnly)
-        query.push(`unaccomplishedOnly=${unaccomplishedOnly}`)
     if (query.length)
         url += '?' + query.join('&');
     

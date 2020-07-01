@@ -1,3 +1,6 @@
+
+
+
 window.onload = function() {
     initEasyMode();
 };

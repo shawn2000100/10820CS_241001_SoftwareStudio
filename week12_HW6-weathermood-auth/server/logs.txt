@@ -1,0 +1,55 @@
+1590318990 ERROR  Error: Mood and text and username are required
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/src/routers/posts.js:24:21
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:275:10)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/body-parser/lib/read.js:130:5
+    at invokeCallback (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/raw-body/index.js:224:16)
+1590319025 ERROR  Error: Mood and text and username are required
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/src/routers/posts.js:24:21
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:275:10)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/body-parser/lib/read.js:130:5
+    at invokeCallback (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/raw-body/index.js:224:16)
+1590329965 ERROR  ReferenceError: username is not defined
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/src/routers/posts.js:28:34
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:275:10)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/body-parser/lib/read.js:130:5
+    at invokeCallback (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/raw-body/index.js:224:16)
+1590330062 ERROR  ReferenceError: username is not defined
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/src/routers/posts.js:28:34
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:275:10)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/body-parser/lib/read.js:130:5
+    at invokeCallback (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/raw-body/index.js:224:16)
+1590341062 ERROR  Error: Mood and text and username are required
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/src/routers/posts.js:22:21
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/express/lib/router/index.js:275:10)
+    at /Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/body-parser/lib/read.js:130:5
+    at invokeCallback (/Users/shiebosheng/Desktop/lab-weathermood-auth/server/node_modules/raw-body/index.js:224:16)

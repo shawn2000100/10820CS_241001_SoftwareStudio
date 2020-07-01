@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 // Develop server URL
-// const postBaseUrl = 'http://localhost:3000/api';
+const postBaseUrl = 'http://localhost:3000/api';
 
 // Production server URL
-const postBaseUrl = 'http://weathermood-db-5.us-east-1.elasticbeanstalk.com/api';
+// const postBaseUrl = 'http://weathermood-db-5.us-east-1.elasticbeanstalk.com/api';
 
 export function listPosts(searchText = '', start) {
     let url = `${postBaseUrl}/posts`;
